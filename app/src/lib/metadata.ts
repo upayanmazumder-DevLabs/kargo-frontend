@@ -15,9 +15,11 @@ export function generatePageMetadata({
   image = '/og-image.png',
   imageAlt,
 }: PageMetadataOptions): Metadata {
-  const url = `https://kargo.dscvit.com${path}`;
+  const baseUrl = 'https://kargo.dscvit.com';
+  const url = `${baseUrl}${path}`;
   const fullTitle = path === '' ? title : `${title} - Kargo`;
   const altText = imageAlt || `${title} - Kargo`;
+  const absoluteImageUrl = image.startsWith('http') ? image : `${baseUrl}${image}`;
 
   return {
     title: fullTitle,
@@ -29,7 +31,7 @@ export function generatePageMetadata({
       siteName: 'Kargo',
       images: [
         {
-          url: image,
+          url: absoluteImageUrl,
           width: 1200,
           height: 630,
           alt: altText,
@@ -42,7 +44,7 @@ export function generatePageMetadata({
       card: 'summary_large_image',
       title: fullTitle,
       description,
-      images: [image],
+      images: [absoluteImageUrl],
     },
   };
 }

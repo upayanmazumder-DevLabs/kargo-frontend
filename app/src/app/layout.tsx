@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     siteName: 'Kargo',
     images: [
       {
-        url: '/og-image.png',
+        url: 'https://kargo.dscvit.com/og-image.png',
         width: 1200,
         height: 630,
         alt: 'Kargo Open Graph Image',
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     title: 'Kargo',
     description:
       'Kargo lets you deploy containerized applications with full flexibility — AI-powered setup, secure infrastructure, and Kubernetes-native scaling, all from a powerful web interface.',
-    images: ['/og-image.png'],
+    images: ['https://kargo.dscvit.com/og-image.png'],
   },
   manifest: '/manifest.webmanifest',
   robots: {
