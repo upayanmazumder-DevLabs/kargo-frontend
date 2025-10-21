@@ -19,7 +19,7 @@ export function generatePageMetadata({
   const url = `${baseUrl}${path}`;
   const fullTitle = path === '' ? title : `${title} - Kargo`;
   const altText = imageAlt || `${title} - Kargo`;
-  const absoluteImageUrl = image.startsWith('http') ? image : `${baseUrl}${image}`;
+  const absoluteImageUrl = new URL(image, baseUrl).href;
 
   return {
     title: fullTitle,
